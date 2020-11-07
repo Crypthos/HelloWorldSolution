@@ -164,6 +164,27 @@ var HelloWorldWebPart = /** @class */ (function (_super) {
                             groupFields: [
                                 Object(_microsoft_sp_property_pane__WEBPACK_IMPORTED_MODULE_1__["PropertyPaneTextField"])('description', {
                                     label: HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_5__["DescriptionFieldLabel"]
+                                }),
+                                Object(_microsoft_sp_property_pane__WEBPACK_IMPORTED_MODULE_1__["PropertyPaneTextField"])('test', {
+                                    label: 'Multi-line Text Field',
+                                    multiline: true
+                                }),
+                                Object(_microsoft_sp_property_pane__WEBPACK_IMPORTED_MODULE_1__["PropertyPaneCheckbox"])('test1', {
+                                    text: 'Checkbox'
+                                }),
+                                Object(_microsoft_sp_property_pane__WEBPACK_IMPORTED_MODULE_1__["PropertyPaneDropdown"])('test2', {
+                                    label: 'Dropdown',
+                                    options: [
+                                        { key: '1', text: 'One' },
+                                        { key: '2', text: 'Two' },
+                                        { key: '3', text: 'Three' },
+                                        { key: '4', text: 'Four' },
+                                    ]
+                                }),
+                                Object(_microsoft_sp_property_pane__WEBPACK_IMPORTED_MODULE_1__["PropertyPaneToggle"])('test3', {
+                                    label: 'Toggle',
+                                    onText: 'On',
+                                    offText: 'Off'
                                 })
                             ]
                         }
