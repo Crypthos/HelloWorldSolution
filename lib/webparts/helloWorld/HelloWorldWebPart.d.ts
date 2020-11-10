@@ -8,7 +8,16 @@ export interface IHelloWorldWebPartProps {
     test2: string;
     test3: boolean;
 }
+export interface ISPLists {
+    value: ISPList[];
+}
+export interface ISPList {
+    Title: string;
+    Id: string;
+}
 export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorldWebPartProps> {
+    private _getListData;
+    private _getMockListData;
     render(): void;
     protected readonly dataVersion: Version;
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration;

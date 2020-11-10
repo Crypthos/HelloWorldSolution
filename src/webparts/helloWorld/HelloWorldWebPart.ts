@@ -11,6 +11,11 @@ import { escape } from '@microsoft/sp-lodash-subset';
 
 import styles from './HelloWorldWebPart.module.scss';
 import * as strings from 'HelloWorldWebPartStrings';
+import MockHttpClient from './MockHttpClient';
+import {
+  SPHttpClient,
+  SPHttpClientResponse
+} from '@microsoft/sp-http';
 
 export interface IHelloWorldWebPartProps {
   description: string;
@@ -20,9 +25,55 @@ export interface IHelloWorldWebPartProps {
   test3: boolean;
 }
 
+export interface ISPLists {
+  value: ISPList[];
+}
+
+export interface ISPList {
+  Title: string;
+  Id: string;
+}
+
 export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorldWebPartProps> {
 
+  private _getListData(): Promise<ISPLists> {
+    return this.context.spHttpClient.get(this.context.pageContext.web.absoluteUrl + `/_api/web/lists?$filter=Hidden eq false`, SPHttpClient.configurations.v1)
+      .then((response: SPHttpClientResponse) => {
+        return response.json();
+      });
+  }
+
+  private _getMockListData(): Promise<ISPLists> {
+    return MockHttpClient.get()
+      .then((data: ISPList[]) => {
+        var listData: ISPLists = { value: data };
+        return listData;
+      }) as Promise<ISPLists>;
+  }
+
+
   public render(): void {
+
+    this.domElement.innerHTML = `
+  <div class="${ styles.helloWorld }">
+    <div class="${ styles.container }">
+      <div class="${ styles.row }">
+        <div class="${ styles.column }">
+          <span class="${ styles.title }">Welcome to SharePoint!</span>
+          <p class="${ styles.subTitle }">Customize SharePoint experiences using web parts.</p>
+          <p class="${ styles.description }">${escape(this.properties.description)}</p>
+          <p class="${ styles.description }">${escape(this.properties.test)}</p>
+          <p class="${ styles.description }">Loading from ${escape(this.context.pageContext.web.title)}</p>
+          <a href="https://aka.ms/spfx" class="${ styles.button }">
+            <span class="${ styles.label }">Learn more</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>`;
+
+/*
+// Hello World part 1
     this.domElement.innerHTML = `
       <div class="${ styles.helloWorld }">
         <div class="${ styles.container }">
@@ -31,6 +82,7 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
               <span class="${ styles.title }">Welcome to SharePoint!</span>
               <p class="${ styles.subTitle }">Customize SharePoint experiences using Web Parts.</p>
               <p class="${ styles.description }">${escape(this.properties.description)}</p>
+              <p class="${ styles.description }">${escape(this.properties.test)}</p>  <!-- test line -->
               <a href="https://aka.ms/spfx" class="${ styles.button }">
                 <span class="${ styles.label }">Learn more</span>
               </a>
@@ -38,6 +90,7 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
           </div>
         </div>
       </div>`;
+*/
   }
 
   protected get dataVersion(): Version {

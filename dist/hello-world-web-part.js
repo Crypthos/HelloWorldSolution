@@ -1,4 +1,4 @@
-define("2bea16ff-9f1e-4344-b7ca-9c32141265f9_0.0.1", ["@microsoft/sp-property-pane","@microsoft/sp-lodash-subset","@microsoft/sp-core-library","@microsoft/sp-webpart-base","HelloWorldWebPartStrings"], function(__WEBPACK_EXTERNAL_MODULE__26ea__, __WEBPACK_EXTERNAL_MODULE_Pk8u__, __WEBPACK_EXTERNAL_MODULE_UWqr__, __WEBPACK_EXTERNAL_MODULE_br4S__, __WEBPACK_EXTERNAL_MODULE_hI9z__) { return /******/ (function(modules) { // webpackBootstrap
+define("2bea16ff-9f1e-4344-b7ca-9c32141265f9_0.0.1", ["@microsoft/sp-property-pane","@microsoft/sp-lodash-subset","@microsoft/sp-core-library","@microsoft/sp-webpart-base","HelloWorldWebPartStrings","@microsoft/sp-http"], function(__WEBPACK_EXTERNAL_MODULE__26ea__, __WEBPACK_EXTERNAL_MODULE_Pk8u__, __WEBPACK_EXTERNAL_MODULE_UWqr__, __WEBPACK_EXTERNAL_MODULE_br4S__, __WEBPACK_EXTERNAL_MODULE_hI9z__, __WEBPACK_EXTERNAL_MODULE_vlQI__) { return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -117,6 +117,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./HelloWorldWebPart.module.scss */ "lYr8");
 /* harmony import */ var HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! HelloWorldWebPartStrings */ "hI9z");
 /* harmony import */ var HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _MockHttpClient__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./MockHttpClient */ "ccxu");
+/* harmony import */ var _microsoft_sp_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @microsoft/sp-http */ "vlQI");
+/* harmony import */ var _microsoft_sp_http__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_microsoft_sp_http__WEBPACK_IMPORTED_MODULE_7__);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -136,13 +139,47 @@ var __extends = (undefined && undefined.__extends) || (function () {
 
 
 
+
+
 var HelloWorldWebPart = /** @class */ (function (_super) {
     __extends(HelloWorldWebPart, _super);
     function HelloWorldWebPart() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    HelloWorldWebPart.prototype._getListData = function () {
+        return this.context.spHttpClient.get(this.context.pageContext.web.absoluteUrl + "/_api/web/lists?$filter=Hidden eq false", _microsoft_sp_http__WEBPACK_IMPORTED_MODULE_7__["SPHttpClient"].configurations.v1)
+            .then(function (response) {
+            return response.json();
+        });
+    };
+    HelloWorldWebPart.prototype._getMockListData = function () {
+        return _MockHttpClient__WEBPACK_IMPORTED_MODULE_6__["default"].get()
+            .then(function (data) {
+            var listData = { value: data };
+            return listData;
+        });
+    };
     HelloWorldWebPart.prototype.render = function () {
-        this.domElement.innerHTML = "\n      <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].helloWorld + "\">\n        <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].container + "\">\n          <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].row + "\">\n            <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].column + "\">\n              <span class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].title + "\">Welcome to SharePoint!</span>\n              <p class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].subTitle + "\">Customize SharePoint experiences using Web Parts.</p>\n              <p class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].description + "\">" + Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.properties.description) + "</p>\n              <a href=\"https://aka.ms/spfx\" class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].button + "\">\n                <span class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].label + "\">Learn more</span>\n              </a>\n            </div>\n          </div>\n        </div>\n      </div>";
+        this.domElement.innerHTML = "\n  <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].helloWorld + "\">\n    <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].container + "\">\n      <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].row + "\">\n        <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].column + "\">\n          <span class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].title + "\">Welcome to SharePoint!</span>\n          <p class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].subTitle + "\">Customize SharePoint experiences using web parts.</p>\n          <p class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].description + "\">" + Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.properties.description) + "</p>\n          <p class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].description + "\">" + Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.properties.test) + "</p>\n          <p class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].description + "\">Loading from " + Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.context.pageContext.web.title) + "</p>\n          <a href=\"https://aka.ms/spfx\" class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].button + "\">\n            <span class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].label + "\">Learn more</span>\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>";
+        /*
+        // Hello World part 1
+            this.domElement.innerHTML = `
+              <div class="${ styles.helloWorld }">
+                <div class="${ styles.container }">
+                  <div class="${ styles.row }">
+                    <div class="${ styles.column }">
+                      <span class="${ styles.title }">Welcome to SharePoint!</span>
+                      <p class="${ styles.subTitle }">Customize SharePoint experiences using Web Parts.</p>
+                      <p class="${ styles.description }">${escape(this.properties.description)}</p>
+                      <p class="${ styles.description }">${escape(this.properties.test)}</p>  <!-- test line -->
+                      <a href="https://aka.ms/spfx" class="${ styles.button }">
+                        <span class="${ styles.label }">Learn more</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>`;
+        */
     };
     Object.defineProperty(HelloWorldWebPart.prototype, "dataVersion", {
         get: function () {
@@ -360,6 +397,33 @@ if(content.locals) module.exports = content.locals;
 /***/ (function(module, exports) {
 
 module.exports = __WEBPACK_EXTERNAL_MODULE_br4S__;
+
+/***/ }),
+
+/***/ "ccxu":
+/*!***************************************************!*\
+  !*** ./lib/webparts/helloWorld/MockHttpClient.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var MockHttpClient = /** @class */ (function () {
+    function MockHttpClient() {
+    }
+    MockHttpClient.get = function () {
+        return new Promise(function (resolve) {
+            resolve(MockHttpClient._items);
+        });
+    };
+    MockHttpClient._items = [{ Title: 'Mock List', Id: '1' },
+        { Title: 'Mock List 2', Id: '2' },
+        { Title: 'Mock List 3', Id: '3' }];
+    return MockHttpClient;
+}());
+/* harmony default export */ __webpack_exports__["default"] = (MockHttpClient);
+
 
 /***/ }),
 
@@ -715,6 +779,17 @@ function registerStyles(styleArray) {
 }
 //# sourceMappingURL=index.js.map
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../webpack/buildin/global.js */ "yLpj")))
+
+/***/ }),
+
+/***/ "vlQI":
+/*!*************************************!*\
+  !*** external "@microsoft/sp-http" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_vlQI__;
 
 /***/ }),
 
