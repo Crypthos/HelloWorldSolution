@@ -20,18 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91a7295a-87eb-40b5-bd63-84195dc34ab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/webparts/helloWorld/MockHttpClient.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.helloworld-webpart/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.helloworld-webpart/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/2bea16ff-9f1e-4344-b7ca-9c32141265f9.manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/2bea16ff-9f1e-4344-b7ca-9c32141265f9.manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/hello-world-web-part.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/hello-world-web-part.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/hello-world-web-part.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/hello-world-web-part.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.d.ts.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.d.ts.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.module.scss.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.module.scss.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/manifests.js" beforeDir="false" afterPath="$PROJECT_DIR$/temp/manifests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/manifests.json" beforeDir="false" afterPath="$PROJECT_DIR$/temp/manifests.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +59,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.manifest.json" />
         <option value="$PROJECT_DIR$/src/webparts/helloWorld/MockHttpClient.ts" />
+        <option value="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.module.scss" />
         <option value="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.ts" />
       </list>
     </option>
@@ -101,7 +105,7 @@
       <workItem from="1604759148013" duration="5541000" />
       <workItem from="1604778258049" duration="9189000" />
       <workItem from="1604921025979" duration="1579000" />
-      <workItem from="1604922722471" duration="5500000" />
+      <workItem from="1604922722471" duration="8999000" />
     </task>
     <servers />
   </component>

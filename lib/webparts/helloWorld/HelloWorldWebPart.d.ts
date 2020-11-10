@@ -16,6 +16,8 @@ export interface ISPList {
     Id: string;
 }
 export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorldWebPartProps> {
+    private _renderListAsync;
+    private _renderList;
     private _getListData;
     private _getMockListData;
     render(): void;

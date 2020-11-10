@@ -9,6 +9,8 @@ declare const styles: {
     description: string;
     button: string;
     label: string;
+    list: string;
+    listItem: string;
 };
 export default styles;
 //# sourceMappingURL=HelloWorldWebPart.module.scss.d.ts.map

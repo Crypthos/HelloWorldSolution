@@ -141,11 +141,36 @@ var __extends = (undefined && undefined.__extends) || (function () {
 
 
 
+
 var HelloWorldWebPart = /** @class */ (function (_super) {
     __extends(HelloWorldWebPart, _super);
     function HelloWorldWebPart() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    HelloWorldWebPart.prototype._renderListAsync = function () {
+        var _this = this;
+        // Local environment
+        if (_microsoft_sp_core_library__WEBPACK_IMPORTED_MODULE_0__["Environment"].type === _microsoft_sp_core_library__WEBPACK_IMPORTED_MODULE_0__["EnvironmentType"].Local) {
+            this._getMockListData().then(function (response) {
+                _this._renderList(response.value);
+            });
+        }
+        else if (_microsoft_sp_core_library__WEBPACK_IMPORTED_MODULE_0__["Environment"].type == _microsoft_sp_core_library__WEBPACK_IMPORTED_MODULE_0__["EnvironmentType"].SharePoint ||
+            _microsoft_sp_core_library__WEBPACK_IMPORTED_MODULE_0__["Environment"].type == _microsoft_sp_core_library__WEBPACK_IMPORTED_MODULE_0__["EnvironmentType"].ClassicSharePoint) {
+            this._getListData()
+                .then(function (response) {
+                _this._renderList(response.value);
+            });
+        }
+    };
+    HelloWorldWebPart.prototype._renderList = function (items) {
+        var html = '';
+        items.forEach(function (item) {
+            html += "\n  <ul class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].list + "\">\n    <li class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].listItem + "\">\n      <span class=\"ms-font-l\">" + item.Title + "</span>\n    </li>\n  </ul>";
+        });
+        var listContainer = this.domElement.querySelector('#spListContainer');
+        listContainer.innerHTML = html;
+    };
     HelloWorldWebPart.prototype._getListData = function () {
         return this.context.spHttpClient.get(this.context.pageContext.web.absoluteUrl + "/_api/web/lists?$filter=Hidden eq false", _microsoft_sp_http__WEBPACK_IMPORTED_MODULE_7__["SPHttpClient"].configurations.v1)
             .then(function (response) {
@@ -160,7 +185,27 @@ var HelloWorldWebPart = /** @class */ (function (_super) {
         });
     };
     HelloWorldWebPart.prototype.render = function () {
-        this.domElement.innerHTML = "\n  <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].helloWorld + "\">\n    <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].container + "\">\n      <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].row + "\">\n        <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].column + "\">\n          <span class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].title + "\">Welcome to SharePoint!</span>\n          <p class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].subTitle + "\">Customize SharePoint experiences using web parts.</p>\n          <p class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].description + "\">" + Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.properties.description) + "</p>\n          <p class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].description + "\">" + Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.properties.test) + "</p>\n          <p class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].description + "\">Loading from " + Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.context.pageContext.web.title) + "</p>\n          <a href=\"https://aka.ms/spfx\" class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].button + "\">\n            <span class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].label + "\">Learn more</span>\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>";
+        this.domElement.innerHTML = "\n  <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].helloWorld + "\">\n    <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].container + "\">\n      <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].row + "\">\n        <div class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].column + "\">\n          <span class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].title + "\">Welcome to SharePoint!</span>\n          <p class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].subTitle + "\">Customize SharePoint experiences using web parts.</p>\n          <p class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].description + "\">" + Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.properties.description) + "</p>\n          <p class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].description + "\">" + Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.properties.test) + "</p>\n          <p class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].description + "\">Loading from " + Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.context.pageContext.web.title) + "</p>\n          <a href=\"https://aka.ms/spfx\" class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].button + "\">\n            <span class=\"" + _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].label + "\">Learn more</span>\n          </a>\n        </div>\n      </div>\n      <div id=\"spListContainer\" />\n    </div>\n  </div>";
+        this._renderListAsync();
+        /*
+        // Hello World part 2
+        this.domElement.innerHTML = `
+          <div class="${ styles.helloWorld }">
+            <div class="${ styles.container }">
+              <div class="${ styles.row }">
+                <div class="${ styles.column }">
+                  <span class="${ styles.title }">Welcome to SharePoint!</span>
+                  <p class="${ styles.subTitle }">Customize SharePoint experiences using web parts.</p>
+                  <p class="${ styles.description }">${escape(this.properties.description)}</p>
+                  <p class="${ styles.description }">${escape(this.properties.test)}</p>
+                  <p class="${ styles.description }">Loading from ${escape(this.context.pageContext.web.title)}</p>
+                  <a href="https://aka.ms/spfx" class="${ styles.button }">
+                    <span class="${ styles.label }">Learn more</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>`;*/
         /*
         // Hello World part 1
             this.domElement.innerHTML = `
@@ -353,7 +398,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_Pk8u__;
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "JPst")(false);
 // Module
-exports.push([module.i, ".helloWorld_7ec12a38 .container_7ec12a38{max-width:700px;margin:0 auto;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.2),0 25px 50px 0 rgba(0,0,0,.1);box-shadow:0 2px 4px 0 rgba(0,0,0,.2),0 25px 50px 0 rgba(0,0,0,.1)}.helloWorld_7ec12a38 .row_7ec12a38{margin:0 -8px;-webkit-box-sizing:border-box;box-sizing:border-box;color:\"[theme:white, default: #ffffff]\";background-color:\"[theme:themeDark, default: #005a9e]\";padding:20px}.helloWorld_7ec12a38 .row_7ec12a38:after,.helloWorld_7ec12a38 .row_7ec12a38:before{display:table;content:\"\";line-height:0}.helloWorld_7ec12a38 .row_7ec12a38:after{clear:both}.helloWorld_7ec12a38 .column_7ec12a38{position:relative;min-height:1px;padding-left:8px;padding-right:8px;-webkit-box-sizing:border-box;box-sizing:border-box}[dir=ltr] .helloWorld_7ec12a38 .column_7ec12a38{float:left}[dir=rtl] .helloWorld_7ec12a38 .column_7ec12a38{float:right}.helloWorld_7ec12a38 .column_7ec12a38 .ms-Grid_7ec12a38{padding:0}@media (min-width:640px){.helloWorld_7ec12a38 .column_7ec12a38{width:83.33333333333334%}}@media (min-width:1024px){.helloWorld_7ec12a38 .column_7ec12a38{width:66.66666666666666%}}@media (min-width:1024px){[dir=ltr] .helloWorld_7ec12a38 .column_7ec12a38{left:16.66667%}[dir=rtl] .helloWorld_7ec12a38 .column_7ec12a38{right:16.66667%}}@media (min-width:640px){[dir=ltr] .helloWorld_7ec12a38 .column_7ec12a38{left:8.33333%}[dir=rtl] .helloWorld_7ec12a38 .column_7ec12a38{right:8.33333%}}.helloWorld_7ec12a38 .title_7ec12a38{font-size:21px;font-weight:100;color:\"[theme:white, default: #ffffff]\"}.helloWorld_7ec12a38 .description_7ec12a38,.helloWorld_7ec12a38 .subTitle_7ec12a38{font-size:17px;font-weight:300;color:\"[theme:white, default: #ffffff]\"}.helloWorld_7ec12a38 .button_7ec12a38{text-decoration:none;height:32px;min-width:80px;background-color:\"[theme:themePrimary, default: #0078d4]\";border-color:\"[theme:themePrimary, default: #0078d4]\";color:\"[theme:white, default: #ffffff]\";outline:transparent;position:relative;font-family:Segoe UI WestEuropean,Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;border-width:0;text-align:center;cursor:pointer;display:inline-block;padding:0 16px}.helloWorld_7ec12a38 .button_7ec12a38 .label_7ec12a38{font-weight:600;font-size:14px;height:32px;line-height:32px;margin:0 4px;vertical-align:top;display:inline-block}", ""]);
+exports.push([module.i, ".helloWorld_e0247e8d .container_e0247e8d{max-width:700px;margin:0 auto;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.2),0 25px 50px 0 rgba(0,0,0,.1);box-shadow:0 2px 4px 0 rgba(0,0,0,.2),0 25px 50px 0 rgba(0,0,0,.1)}.helloWorld_e0247e8d .row_e0247e8d{margin:0 -8px;-webkit-box-sizing:border-box;box-sizing:border-box;color:\"[theme:white, default: #ffffff]\";background-color:\"[theme:themeDark, default: #005a9e]\";padding:20px}.helloWorld_e0247e8d .row_e0247e8d:after,.helloWorld_e0247e8d .row_e0247e8d:before{display:table;content:\"\";line-height:0}.helloWorld_e0247e8d .row_e0247e8d:after{clear:both}.helloWorld_e0247e8d .column_e0247e8d{position:relative;min-height:1px;padding-left:8px;padding-right:8px;-webkit-box-sizing:border-box;box-sizing:border-box}[dir=ltr] .helloWorld_e0247e8d .column_e0247e8d{float:left}[dir=rtl] .helloWorld_e0247e8d .column_e0247e8d{float:right}.helloWorld_e0247e8d .column_e0247e8d .ms-Grid_e0247e8d{padding:0}@media (min-width:640px){.helloWorld_e0247e8d .column_e0247e8d{width:83.33333333333334%}}@media (min-width:1024px){.helloWorld_e0247e8d .column_e0247e8d{width:66.66666666666666%}}@media (min-width:1024px){[dir=ltr] .helloWorld_e0247e8d .column_e0247e8d{left:16.66667%}[dir=rtl] .helloWorld_e0247e8d .column_e0247e8d{right:16.66667%}}@media (min-width:640px){[dir=ltr] .helloWorld_e0247e8d .column_e0247e8d{left:8.33333%}[dir=rtl] .helloWorld_e0247e8d .column_e0247e8d{right:8.33333%}}.helloWorld_e0247e8d .title_e0247e8d{font-size:21px;font-weight:100;color:\"[theme:white, default: #ffffff]\"}.helloWorld_e0247e8d .description_e0247e8d,.helloWorld_e0247e8d .subTitle_e0247e8d{font-size:17px;font-weight:300;color:\"[theme:white, default: #ffffff]\"}.helloWorld_e0247e8d .button_e0247e8d{text-decoration:none;height:32px;min-width:80px;background-color:\"[theme:themePrimary, default: #0078d4]\";border-color:\"[theme:themePrimary, default: #0078d4]\";color:\"[theme:white, default: #ffffff]\";outline:transparent;position:relative;font-family:Segoe UI WestEuropean,Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;border-width:0;text-align:center;cursor:pointer;display:inline-block;padding:0 16px}.helloWorld_e0247e8d .button_e0247e8d .label_e0247e8d{font-weight:600;font-size:14px;height:32px;line-height:32px;margin:0 4px;vertical-align:top;display:inline-block}.helloWorld_e0247e8d .list_e0247e8d{margin:10;padding:10;line-height:50px;list-style-type:none;-webkit-box-shadow:0 4px 4px 0 rgba(0,0,0,.2),0 25px 50px 0 rgba(0,0,0,.1);box-shadow:0 4px 4px 0 rgba(0,0,0,.2),0 25px 50px 0 rgba(0,0,0,.1)}.helloWorld_e0247e8d .list_e0247e8d,.helloWorld_e0247e8d .listItem_e0247e8d{color:#333;font-family:Segoe UI Regular WestEuropean,Segoe UI,Tahoma,Arial,sans-serif;font-size:14px;font-weight:400;-webkit-box-sizing:border-box;box-sizing:border-box}.helloWorld_e0247e8d .listItem_e0247e8d{vertical-align:center;margin:0;-webkit-box-shadow:none;box-shadow:none;padding:9px 28px 3px;position:relative}", ""]);
 
 
 
@@ -450,16 +495,18 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 __webpack_require__(/*! ./HelloWorldWebPart.module.css */ "UxF6");
 var styles = {
-    helloWorld: 'helloWorld_7ec12a38',
-    container: 'container_7ec12a38',
-    row: 'row_7ec12a38',
-    column: 'column_7ec12a38',
-    'ms-Grid': 'ms-Grid_7ec12a38',
-    title: 'title_7ec12a38',
-    subTitle: 'subTitle_7ec12a38',
-    description: 'description_7ec12a38',
-    button: 'button_7ec12a38',
-    label: 'label_7ec12a38'
+    helloWorld: 'helloWorld_e0247e8d',
+    container: 'container_e0247e8d',
+    row: 'row_e0247e8d',
+    column: 'column_e0247e8d',
+    'ms-Grid': 'ms-Grid_e0247e8d',
+    title: 'title_e0247e8d',
+    subTitle: 'subTitle_e0247e8d',
+    description: 'description_e0247e8d',
+    button: 'button_e0247e8d',
+    label: 'label_e0247e8d',
+    list: 'list_e0247e8d',
+    listItem: 'listItem_e0247e8d'
 };
 /* harmony default export */ __webpack_exports__["default"] = (styles);
 /* tslint:enable */ 
