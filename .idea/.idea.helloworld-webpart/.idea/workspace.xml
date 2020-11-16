@@ -20,21 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91a7295a-87eb-40b5-bd63-84195dc34ab6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sharepoint/solution/debug/2bea16ff-9f1e-4344-b7ca-9c32141265f9/WebPart_2bea16ff-9f1e-4344-b7ca-9c32141265f9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sharepoint/solution/debug/AppManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sharepoint/solution/debug/ClientSideAssets.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sharepoint/solution/debug/ClientSideAssets.xml.config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sharepoint/solution/debug/ClientSideAssets/2bea16ff-9f1e-4344-b7ca-9c32141265f9_color.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sharepoint/solution/debug/ClientSideAssets/2bea16ff-9f1e-4344-b7ca-9c32141265f9_outline.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sharepoint/solution/debug/[Content_Types].xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sharepoint/solution/debug/_rels/.rels" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sharepoint/solution/debug/_rels/AppManifest.xml.rels" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sharepoint/solution/debug/_rels/ClientSideAssets.xml.rels" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sharepoint/solution/debug/_rels/feature_2bea16ff-9f1e-4344-b7ca-9c32141265f9.xml.rels" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sharepoint/solution/debug/feature_2bea16ff-9f1e-4344-b7ca-9c32141265f9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sharepoint/solution/debug/feature_2bea16ff-9f1e-4344-b7ca-9c32141265f9.xml.config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sharepoint/solution/helloworld-webpart.sppkg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.helloworld-webpart/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.helloworld-webpart/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/hello-world-web-part.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/hello-world-web-part.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/hello-world-web-part.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/hello-world-web-part.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/webparts/helloWorld/HelloWorldWebPart.module.scss.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.module.scss.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.module.scss.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +46,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -61,16 +63,21 @@
         <option value="$PROJECT_DIR$/src/webparts/helloWorld/MockHttpClient.ts" />
         <option value="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.module.scss" />
         <option value="$PROJECT_DIR$/src/webparts/helloWorld/HelloWorldWebPart.ts" />
+        <option value="$PROJECT_DIR$/test.html" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1judFfJQZxBJGbwEmM2nHsJkuZG" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
@@ -78,6 +85,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Users\KevinNewland\AppData\Local\JetBrains\Toolbox\apps\Rider\ch-0\202.7660.16\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\KevinNewland\RiderProjects\helloworld-webpart" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="js.build_tools.gulp">
@@ -105,7 +117,10 @@
       <workItem from="1604759148013" duration="5541000" />
       <workItem from="1604778258049" duration="9189000" />
       <workItem from="1604921025979" duration="1579000" />
-      <workItem from="1604922722471" duration="8999000" />
+      <workItem from="1604922722471" duration="9477000" />
+      <workItem from="1605265803100" duration="1526000" />
+      <workItem from="1605512034310" duration="636000" />
+      <workItem from="1605522796992" duration="1098000" />
     </task>
     <servers />
   </component>
@@ -126,20 +141,24 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="372" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604759174923">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-1697" y="1143" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.1076.1536.816/0.0.2560.1400@-1920.1076.1536.816" timestamp="1604674687642" />
     <state x="372" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.1076.1536.816/0.0.2560.1400@0.0.2560.1400" timestamp="1604759174923" />
-    <state x="426" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604769353222">
+    <state x="426" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605524439591">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="426" y="502" key="#com.intellij.fileTypes.FileTypeChooser/-1920.1076.1536.816/0.0.2560.1400@0.0.2560.1400" timestamp="1604769353222" />
-    <state x="-1392" y="1358" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1604788542408">
-      <screen x="-1920" y="1076" width="1536" height="816" />
+    <state x="426" y="502" key="#com.intellij.fileTypes.FileTypeChooser/-1920.1076.1536.816/0.0.2560.1400@0.0.2560.1400" timestamp="1605524439591" />
+    <state x="880" y="484" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1605017799083">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-1392" y="1358" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/-1920.1076.1536.816/0.0.2560.1400@-1920.1076.1536.816" timestamp="1604788542408" />
+    <state x="880" y="484" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/-1920.1076.1536.816/0.0.2560.1400@0.0.2560.1400" timestamp="1605017799083" />
     <state x="502" y="598" key="Github.ShareDialog" timestamp="1604769121466">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
